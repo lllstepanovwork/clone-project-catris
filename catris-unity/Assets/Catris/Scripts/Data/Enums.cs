@@ -1,4 +1,4 @@
-﻿namespace OleksiiStepanov.Game
+﻿namespace Catris.Game
 {
     #region App Loading
 

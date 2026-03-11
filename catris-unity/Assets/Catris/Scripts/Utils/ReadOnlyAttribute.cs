@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace OleksiiStepanov.Utils
+namespace Catris.Utils
 {
     public class ReadOnlyAttribute : PropertyAttribute
     {

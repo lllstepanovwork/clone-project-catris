@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace OleksiiStepanov.Game
+namespace Catris.Game
 {
     [CreateAssetMenu(fileName = "Cat", menuName = "Cat")]
     public class CatSO : ScriptableObject

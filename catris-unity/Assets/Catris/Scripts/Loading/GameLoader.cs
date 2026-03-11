@@ -1,81 +1,65 @@
 ﻿using System;
 using System.Collections.Generic;
-using OleksiiStepanov.Game;
-using OleksiiStepanov.Utils;
 using UnityEngine;
+using Zenject;
 
-#if UNITY_IOS
-using System.Runtime.InteropServices;
-#endif
-
-namespace OleksiiStepanov.Loading
+namespace Catris.Loading
 {
-    public class GameLoader : SingletonBehaviour<GameLoader>
+    public class GameLoader : IInitializable
     {
-        [NonSerialized]
-        public List<LoadingStepBase> LoadingSteps = null;
-
-        public LoadingStepBase CurrentLoadingStep { get; private set; }
-
-        public event Action<LoadingStep> LoadingStepCompleted = null;
-
-        public event Action LoadingCompleted = null;
-
-        [HideInInspector]
         public bool LoadingComplete = false;
 
-        private int currentLoadingStepIndex = 0;
+        public event Action<LoadingStep> LoadingStepCompleted = null;
+        public event Action LoadingCompleted = null;
 
-        private void Start()
+        private readonly LoadingStepFactory _factory;
+
+        private List<LoadingStepBase> _loadingSteps;
+        private LoadingStepBase CurrentLoadingStep { get; set; }
+        private int _currentLoadingStepIndex = 0;
+
+        [Inject]
+        public GameLoader(LoadingStepFactory factory)
         {
-            Init();
+            _factory = factory;
         }
 
-        public void Init()
+        public void Initialize()
+        {
+            StartLoading();
+        }
+
+        private void StartLoading()
         {
             LoadingComplete = false;
-            LoadingSteps = new List<LoadingStepBase>
+
+            _loadingSteps = new List<LoadingStepBase>
             {
-                new LoadingStep_AppInit(),
-                new LoadingStep_UIInit(),
-                new LoadingStep_UserData(),
-                new LoadingStep_Complete()
+                _factory.Create<LoadingStepAppInit>(),
+                _factory.Create<LoadingStepUIInit>(),
+                _factory.Create<LoadingStepComplete>()
             };
 
-            foreach (LoadingStepBase step in LoadingSteps)
+            foreach (var step in _loadingSteps)
             {
                 step.Exited += GoToNextStep;
             }
 
-            if (LoadingSteps != null && LoadingSteps.Count > 0)
-            {
-                SetCurrentLoadingStep(LoadingSteps[0]);
-
-                CurrentLoadingStep.Enter();
-            }
-            else
-            {
-                Debug.LogError("Loading steps list is null or empty");
-                Application.Quit();
-            }
-
-            Input.multiTouchEnabled = false;
+            SetCurrentLoadingStep(_loadingSteps[0]);
         }
 
-        public void GoToNextStep()
+        private void GoToNextStep()
         {
             if (CurrentLoadingStep != null)
             {
                 LoadingStepCompleted?.Invoke(CurrentLoadingStep.GetStepType());
             }
 
-            currentLoadingStepIndex++;
+            _currentLoadingStepIndex++;
 
-            if (currentLoadingStepIndex < LoadingSteps.Count)
+            if (_currentLoadingStepIndex < _loadingSteps.Count)
             {
-                SetCurrentLoadingStep(LoadingSteps[currentLoadingStepIndex]);
-
-                CurrentLoadingStep.Enter();
+                SetCurrentLoadingStep(_loadingSteps[_currentLoadingStepIndex]);
             }
             else
             {
@@ -86,8 +70,18 @@ namespace OleksiiStepanov.Loading
 
         private void SetCurrentLoadingStep(LoadingStepBase step)
         {
-            Debug.Log("Entering <color=#00AAFF>" + step + "</color> step!");
+            Debug.Log($"Entering: {step} step!");
             CurrentLoadingStep = step;
+            CurrentLoadingStep.Enter();
         }
+    }
+    
+    public enum LoadingStep
+    {
+        None,
+        AppInit,
+        UIInit,
+        UserData,
+        Complete
     }
 }

@@ -4,7 +4,7 @@ using TMPro;
 using DG.Tweening;
 using System;
 
-namespace OleksiiStepanov.Game
+namespace Catris.Game
 {
     public class CatHolder : MonoBehaviour
     {

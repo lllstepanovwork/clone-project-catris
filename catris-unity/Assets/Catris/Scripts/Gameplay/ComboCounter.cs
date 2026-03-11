@@ -2,7 +2,7 @@
 using DG.Tweening;
 using TMPro;
 
-namespace OleksiiStepanov.Game
+namespace Catris.Game
 {
 	public class ComboCounter : MonoBehaviour
 	{

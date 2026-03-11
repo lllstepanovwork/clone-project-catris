@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System;
 
-namespace OleksiiStepanov.Game
+namespace Catris.Game
 {
     public class CatField : MonoBehaviour
     {

@@ -1,7 +1,7 @@
 ﻿using System;
-using OleksiiStepanov.Game;
+using Catris.Game;
 
-namespace OleksiiStepanov.Loading
+namespace Catris.Loading
 {
 	public abstract class LoadingStepBase
 	{

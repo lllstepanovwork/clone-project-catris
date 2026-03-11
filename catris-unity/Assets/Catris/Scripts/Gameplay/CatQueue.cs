@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections.Generic;
-using OleksiiStepanov.Utils;
 
-namespace OleksiiStepanov.Game
+namespace Catris.Game
 {
-    public class CatQueue : SingletonBehaviour<CatQueue>
+    public class CatQueue : MonoBehaviour
     {
+        [Header("Content")]
         [SerializeField] private List<CatSO> catsSO = new List<CatSO>();
 
         public List<int> catQueue = new List<int>();

@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using System.Collections.Generic;
 using System;
-using OleksiiStepanov.UI;
+using Zenject;
 
-namespace OleksiiStepanov.Game
+namespace Catris.Game
 {
     public class CatColumn : MonoBehaviour
     {
@@ -34,6 +33,14 @@ namespace OleksiiStepanov.Game
         public static Action OnPlace;
         public static Action<int,int> OnMerge;
 
+        private CatQueue _catQueue;
+        
+        [Inject]
+        public void Construct(CatQueue catQueue)
+        {
+            _catQueue = catQueue;
+        }
+        
         public void Init(Action OnColumnFull = null)
         {
             dropPointStartPosition = dropPointRectTransform.anchoredPosition;
@@ -51,7 +58,7 @@ namespace OleksiiStepanov.Game
 
                     CatHolder catHolder = GetAvailableCat();
                     catHolder.gameObject.SetActive(true);
-                    catHolder.Init(CatQueue.Instance.DequeueCat());
+                    catHolder.Init(_catQueue.DequeueCat());
                     catHolder.rectTransform.anchoredPosition = spawningPointRectTransform.anchoredPosition;
                     catHolder.MoveToTarget(dropPointRectTransform.anchoredPosition, () =>
                     {
@@ -133,7 +140,7 @@ namespace OleksiiStepanov.Game
                     }
                     else
                     {
-                        currentCatHolders[currentCatHolders.Count - 2].Init(CatQueue.Instance.GetCatSO(currentCatHolders[currentCatHolders.Count - 2].number));
+                        currentCatHolders[currentCatHolders.Count - 2].Init(_catQueue.GetCatSO(currentCatHolders[currentCatHolders.Count - 2].number));
                     }
 
                     ConsumeCat(currentCatHolders.Count - 1);

@@ -1,15 +1,26 @@
 ﻿using System;
-using OleksiiStepanov.UI;
-using OleksiiStepanov.Utils;
+using Catris.UI;
 using UnityEngine;
+using Zenject;
 
-namespace OleksiiStepanov.Game
+namespace Catris.Game
 {
-    public class GameManager : SingletonBehaviour<GameManager>
+    public class GameManager : MonoBehaviour
     {
+        [Header("Content")]
         [SerializeField] private CatViewer catViewer;
         [SerializeField] private CatField catField;
         [SerializeField] private ScoreHolder scoreHolder;
+        
+        private UIPanelController _panelController;
+        private CatQueue _catQueue;
+        
+        [Inject]
+        public void Construct(UIPanelController panelController, CatQueue catQueue)
+        {
+            _panelController = panelController;
+            _catQueue = catQueue;
+        }
         
         public void Init(Action onSuccess = null)
         {
@@ -40,8 +51,8 @@ namespace OleksiiStepanov.Game
                 gameResult.msgText = Constants.GAME_OVER_RESULT_GREAT;
             }
 
-            UIPanelController.Instance.OpenPanel(UIPanelController.Instance.winPanel, true);
-            UIPanelController.Instance.winPanel.Init(gameResult);
+            _panelController.OpenPanel(_panelController.winPanel, true);
+            _panelController.winPanel.Init(gameResult);
         }
 
         public void Restart() 
@@ -50,8 +61,8 @@ namespace OleksiiStepanov.Game
             catField.ClearField();
             scoreHolder.ClearScore();
 
-            CatQueue.Instance.ClearQueue();
-            CatQueue.Instance.GenerateQueue();
+            _catQueue.ClearQueue();
+            _catQueue.GenerateQueue();
         }
     }
 

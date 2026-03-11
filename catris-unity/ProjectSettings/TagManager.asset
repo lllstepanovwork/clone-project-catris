@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags: []
   layers:
   - Default
@@ -41,15 +41,8 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: UnderHud
-    uniqueID: 1195749011
-    locked: 0
-  - name: Hud
+  - name: UI
     uniqueID: 2078962383
     locked: 0
-  - name: OverHud
-    uniqueID: 3672506251
-    locked: 0
-  - name: InputBlocker
-    uniqueID: 1590477697
-    locked: 0
+  m_RenderingLayers:
+  - Default
