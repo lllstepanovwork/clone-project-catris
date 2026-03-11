@@ -4,7 +4,7 @@
 # To import these sprites into your Unity project, download "TexturePackerImporter":
 # https://www.codeandweb.com/texturepacker/unity
 #
-# $TexturePacker:SmartUpdate:ce50949a81f498c913c50e20fdf4ef5a:458dafe05fde8aa7c763d983938752f9:e0f2d65c1a5517cc47babc51eaf33120$
+# $TexturePacker:SmartUpdate:ed7472971eb357602612c1affd9a477d:72ea01f77e84d693da67a97dd7248297:e0f2d65c1a5517cc47babc51eaf33120$
 #
 :format=40300
 :texture=ui_atlas.png
@@ -18,8 +18,8 @@ Gameplay-cat_158x82;1;43;158;82; 0.5;0.5; 0;0;0;0
 General-circle-fill-512;1083;1535;512;512; 0.5;0.5; 0;0;0;0
 General-circle_32x32;1;9;32;32; 0.5;0.5; 0;0;0;0
 General-square-fill-32;35;9;32;32; 0.5;0.5; 0;0;0;0
-General-square-round-128x128;1809;1711;128;128; 0.5;0.5; 32;32;32;32
+General-square-round-128x128;1805;1712;128;128; 0.5;0.5; 46;46;46;46
 Icons-appulove_logo;161;61;300;64; 0.5;0.5; 0;0;0;0
-UI-basket;1597;1828;210;219; 0.5;0.5; 0;0;0;0
+Icons-os-logo-2024-white-transparent;1805;1842;205;205; 0.5;0.5; 0;0;0;0
 UI-continue_button;463;61;64;64; 0.5;0.5; 0;0;0;0
-UI-continue_button_256x256;1809;1841;206;206; 0.5;0.5; 0;0;0;0
+UI-continue_button_256x256;1597;1841;206;206; 0.5;0.5; 0;0;0;0

@@ -215,28 +215,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UI-basket
-      rect:
-        serializedVersion: 2
-        x: 1597
-        y: 1828
-        width: 210
-        height: 219
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 36a9fdaaf60874e86a38e1f54ad1b5f3
-      internalID: 539977266
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: UI-continue_button
       rect:
         serializedVersion: 2
@@ -262,7 +240,7 @@ TextureImporter:
       name: UI-continue_button_256x256
       rect:
         serializedVersion: 2
-        x: 1809
+        x: 1597
         y: 1841
         width: 206
         height: 206
@@ -350,13 +328,13 @@ TextureImporter:
       name: General-square-round-128x128
       rect:
         serializedVersion: 2
-        x: 1809
-        y: 1711
+        x: 1805
+        y: 1712
         width: 128
         height: 128
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 32, y: 32, z: 32, w: 32}
+      border: {x: 46, y: 46, z: 46, w: 46}
       customData: 
       outline: []
       physicsShape: []
@@ -364,6 +342,28 @@ TextureImporter:
       bones: []
       spriteID: 60a055f24887d4f17819143eb0ff4991
       internalID: 2130166154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icons-os-logo-2024-white-transparent
+      rect:
+        serializedVersion: 2
+        x: 1805
+        y: 1842
+        width: 205
+        height: 205
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f0425b249d4347cb9cdbfdb0ef2d88a
+      internalID: 100330043
       vertices: []
       indices: 
       edges: []
@@ -389,7 +389,7 @@ TextureImporter:
       General-square-fill-32: 1898793507
       General-square-round-128x128: 2130166154
       Icons-appulove_logo: 1393809474
-      UI-basket: 539977266
+      Icons-os-logo-2024-white-transparent: 100330043
       UI-continue_button: 732449221
       UI-continue_button_256x256: 1335415513
   mipmapLimitGroupName: 
