@@ -4,7 +4,7 @@
         <key>fileFormatVersion</key>
         <int>6</int>
         <key>texturePackerVersion</key>
-        <string>7.1.0</string>
+        <string>7.12.0</string>
         <key>autoSDSettings</key>
         <array>
             <struct type="AutoSDSettings">
@@ -124,7 +124,7 @@
             <key>datafile</key>
             <struct type="DataFile">
                 <key>name</key>
-                <filename>../catris-unity/Assets/OleksiiStepanov/Sprites/ui_atlas.tpsheet</filename>
+                <filename>../catris-unity/Assets/Catris/Sprites/ui_atlas.tpsheet</filename>
             </struct>
         </map>
         <key>multiPackMode</key>
@@ -243,7 +243,7 @@
                 <key>scale9Enabled</key>
                 <true/>
                 <key>scale9Borders</key>
-                <rect>32,32,64,64</rect>
+                <rect>46,46,36,36</rect>
                 <key>scale9Paddings</key>
                 <rect>32,32,64,64</rect>
                 <key>scale9FromFile</key>
@@ -264,18 +264,18 @@
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
-            <key type="filename">Sprites/UI/basket.png</key>
+            <key type="filename">Sprites/Icons/os-logo-2024-white-transparent.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
                 <key>spriteScale</key>
-                <double>1</double>
+                <double>0.2</double>
                 <key>scale9Enabled</key>
                 <false/>
                 <key>scale9Borders</key>
-                <rect>53,55,105,109</rect>
+                <rect>256,256,512,512</rect>
                 <key>scale9Paddings</key>
-                <rect>53,55,105,109</rect>
+                <rect>256,256,512,512</rect>
                 <key>scale9FromFile</key>
                 <false/>
             </struct>
