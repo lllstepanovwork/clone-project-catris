@@ -6,7 +6,7 @@ namespace OleksiiStepanov.UI
     {
         public void OnPauseButtonClick()
         {
-            UIPanelController.Instance.OpenPanel(UIPanelController.Instance.winPanel, true);
+            UIPanelController.Instance.OpenPanel(UIPanelController.Instance.pausePanel, true);
         }
     }
 }

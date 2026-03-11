@@ -1,9 +1,9 @@
 version: 2
 tpsheetFileNames:
-- Assets/OleksiiStepanov/Sprites/ui_atlas.tpsheet
+- Assets/Catris/Sprites/ui_atlas.tpsheet
 - Assets/Plugins/codeandweb.com/Example/SpriteSheet/sprites.tpsheet
 textureFileNames:
-- Assets/OleksiiStepanov/Sprites/ui_atlas.png
+- Assets/Catris/Sprites/ui_atlas.png
 - Assets/Plugins/codeandweb.com/Example/SpriteSheet/sprites.png
 normalmapFileNames:
 - 
