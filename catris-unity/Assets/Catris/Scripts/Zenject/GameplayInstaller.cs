@@ -8,7 +8,6 @@ namespace Battleship.Gameplay
     {
         [Header("Content")]
         [SerializeField] private GameManager gameManager;
-        [SerializeField] private CatQueue catQueue;
         
         public override void InstallBindings()
         {
@@ -26,9 +25,7 @@ namespace Battleship.Gameplay
                 .FromInstance(gameManager)
                  .AsSingle();
             
-            Container.Bind<CatQueue>()
-                .FromInstance(catQueue)
-                .AsSingle();
+            Container.Bind<CatQueue>().AsSingle().NonLazy();
         }
     }
 }

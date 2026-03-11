@@ -7,6 +7,7 @@ namespace Catris.UI
 {
     public class ScoreHolder : MonoBehaviour
     {
+        [Header("Content")]
         [SerializeField] private RectTransform currentScoreTextRectTransform;
 
         [Header("Text")]

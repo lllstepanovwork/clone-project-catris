@@ -6,11 +6,12 @@ namespace Catris.UI
 {
     public class CatViewer : MonoBehaviour
     {
+        [Header("Content")]
         [SerializeField] private Animator anim;
         [SerializeField] private CatViewerElement catFront;
         [SerializeField] private CatViewerElement catBack;
 
-        private const string AnimMoveTrigger = "Move";
+        private static readonly int Move = Animator.StringToHash("Move");
 
         private CatQueue _catQueue;
         
@@ -45,9 +46,9 @@ namespace Catris.UI
             catBack.transform.SetAsFirstSibling();
         }
 
-        public void MoveCats()
+        private void MoveCats()
         {
-            anim.SetTrigger(AnimMoveTrigger);
+            anim.SetTrigger(Move);
         }
     }
 }

@@ -1,8 +1,6 @@
 using UnityEngine;
 using System;
-using Catris.Utils;
 using DG.Tweening;
-using Zenject;
 
 namespace Catris.UI
 {

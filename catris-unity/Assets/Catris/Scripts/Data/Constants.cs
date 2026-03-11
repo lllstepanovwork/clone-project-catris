@@ -4,23 +4,16 @@ namespace Catris.Game
     {
         #region URL
 
-        public const string APPSULOVE_CATRIS_URL = "https://www.appsyoulove.com";
+        public const string AppsuloveCatrisLink = "https://www.appsyoulove.com";
+        public const string OSLink = "https://www.linkedin.com/in/lllstepanov/";
 
         #endregion
 
         #region WinPanel
 
-        public const string GAME_OVER_RESULT_GREAT = "Great!";
-        public const string GAME_OVER_RESULT_NEW_RECORD = "New Record!";
+        public const string GameOverResultGreat = "Great!";
+        public const string GameOverResultNewRecord = "New Record!";
 
-        #endregion
-
-
-        #region Scenes
-
-        public const string LOADER_SCENE_NAME = "Loader";
-        public const string MAIN_SCENE_NAME = "Main";
-        
         #endregion
     }
 }

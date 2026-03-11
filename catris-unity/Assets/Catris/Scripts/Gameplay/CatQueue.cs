@@ -1,17 +1,22 @@
-﻿using UnityEngine;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Catris.Gameplay;
+using Zenject;
 
 namespace Catris.Game
 {
-    public class CatQueue : MonoBehaviour
+    public class CatQueue
     {
-        [Header("Content")]
-        [SerializeField] private List<CatSO> catsSO = new List<CatSO>();
-
-        public List<int> catQueue = new List<int>();
-
+        private readonly List<int> catQueue = new List<int>();
+        private Cats _cats;
+        
         private int listSize = 100;
+
+        [Inject]
+        public void Construct(Cats cats)
+        {
+            _cats = cats;
+        }
 
         public void Init(Action onSuccess = null)
         {
@@ -34,7 +39,7 @@ namespace Catris.Game
 
         public CatSO DequeueCat()
         {
-            CatSO catSO = catsSO[catQueue[0]];
+            CatSO catSo = _cats.catList[catQueue[0]];
             catQueue.RemoveAt(0);
 
             if (catQueue.Count < 10)
@@ -42,17 +47,17 @@ namespace Catris.Game
                 GenerateQueue();
             }
 
-            return catSO; 
+            return catSo; 
         }
 
         public CatSO GetCatSO(int index)
         {
-            return catsSO[index];
+            return _cats.catList[index];
         }
 
         public CatSO GetCatSOInQueue(int index)
         {
-            return catsSO[catQueue[index]];
+            return _cats.catList[catQueue[index]];
         }
 
         public void ClearQueue() 

@@ -44,11 +44,11 @@ namespace Catris.Game
 
                 gameResult.bestScore = true;
 
-                gameResult.msgText = Constants.GAME_OVER_RESULT_NEW_RECORD;
+                gameResult.msgText = Constants.GameOverResultNewRecord;
             }
             else
             {
-                gameResult.msgText = Constants.GAME_OVER_RESULT_GREAT;
+                gameResult.msgText = Constants.GameOverResultGreat;
             }
 
             _panelController.OpenPanel(_panelController.winPanel, true);

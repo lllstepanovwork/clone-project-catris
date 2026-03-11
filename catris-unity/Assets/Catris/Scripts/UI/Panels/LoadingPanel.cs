@@ -40,14 +40,18 @@ namespace Catris.UI
             onSuccess?.Invoke();
         }
 
-		public void OnLinkButtonClick()
+		public void OnAULLinkButtonClick()
 		{
-			Application.OpenURL(Constants.APPSULOVE_CATRIS_URL);
+			Application.OpenURL(Constants.AppsuloveCatrisLink);
 		}
 
+        public void OnOSLinkButtonClick()
+        {
+            Application.OpenURL(Constants.OSLink);
+        }
+        
         public void OnContinueButtonClick()
         {
-            Debug.Log("OPEN!");
             _panelController.ClosePanel(this, true);
         }
     }
